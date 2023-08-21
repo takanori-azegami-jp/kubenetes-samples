@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  labels:
+    component: nginx
+spec:
+  containers:
+    - name: nginx
+      image: nginx:1.16
+      volumeMounts:
+        - name: nginx-log
+          mountPath: /var/log/nginx
+
+    - name: fluentd
+      image: fluent/fluentd:v1.11
+      volumeMounts:
+        - name: nginx-log
+          mountPath: /var/log/nginx
+          readOnly: true
+
+  volumes:
+    - name: nginx-log
+      emptyDir: {}
