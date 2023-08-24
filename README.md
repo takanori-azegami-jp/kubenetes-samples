@@ -9,7 +9,7 @@ kubenetes の samples プロジェクト
 - minikube version： v1.31.2
 
 ## 環境構築メモ
-- 注意：「PowerShell」や「Rancher Desktop」は管理者権限で起動すること
+- **注意：「PowerShell」や「Rancher Desktop」は管理者権限で起動すること**
 
 - minukebeコマンド
 ```bash
